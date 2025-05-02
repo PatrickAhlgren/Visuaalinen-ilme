@@ -13,19 +13,28 @@
 
   <!-- Chat-widget -->
   <div id="chat-widget">
-    <div id="chat-messages"></div>
 
-    <!-- Uusi otsikko -->
+    <!-- 1) Otsikko aivan yläreunassa -->
     <div class="chat-header">Patrickin Botti</div>
 
+    <!-- 2) Viestialue -->
+    <div id="chat-messages"></div>
+
+    <!-- 3) Syöttölomake -->
     <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Lähetä viesti..." autocomplete="off" />
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Lähetä viesti..."
+        autocomplete="off"
+      />
       <button type="submit" aria-label="Lähetä viesti">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
           <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/>
         </svg>
       </button>
     </form>
+
   </div>
 
   <script src="script.js"></script>
