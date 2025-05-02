@@ -3,30 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Chat Widget</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"> <!-- Liittää tyylit -->
 </head>
 <body>
-  <!-- Avauspainike headerissä -->
-  <button id="open-chat" aria-label="Avaa chat">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
-      <path d="M3 6h18M3 12h18M3 18h18"/>
-    </svg>
-  </button>
+
+  <!-- Painike, joka avaa chatin -->
+  <button id="open-chat" onclick="toggleChat()">Avaa chat</button>
 
   <!-- Chat-widget -->
   <div id="chat-widget">
     <div id="chat-messages"></div>
     <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Lähetä viesti..." />
-      <button type="submit" aria-label="Lähetä viesti">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
-          <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/>
-        </svg>
-      </button>
+      <input type="text" id="user-input" placeholder="Lähetä viesti...">
+      <button type="submit">📨</button>
     </form>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js"></script> <!-- Liittää JavaScriptin -->
 </body>
 </html>
+
 
