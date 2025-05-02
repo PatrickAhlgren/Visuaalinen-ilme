@@ -4,10 +4,10 @@ const openButton = document.getElementById("open-chat");
 
 // Avaa chat-widget
 openButton.addEventListener("click", function() {
-  if (chatWidget.style.left === "0px") {
-    chatWidget.style.left = "-320px";  // Sulkee chatin
+  if (chatWidget.style.right === "0px") {
+    chatWidget.style.right = "-320px";  // Sulkee chatin
   } else {
-    chatWidget.style.left = "0px";  // Avaa chatin
+    chatWidget.style.right = "0px";  // Avaa chatin
   }
 });
 
