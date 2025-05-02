@@ -1,0 +1,16 @@
+<search-drawer id="SearchDrawer" class="search-drawer drawer drawer--end fixed bottom-0 left-0 h-full w-full pointer-events-none">
+  <div class="drawer__inner absolute top-0 flex flex-col w-full h-full overflow-hidden bg-white shadow-xl">
+    <gesture-element class="drawer__header flex justify-between items-center p-4 border-b">
+      <span class="drawer__title text-2xl font-semibold">Lähetä viesti</span>
+      <button class="text-xl" onclick="document.getElementById('SearchDrawer').setAttribute('hidden', true)">×</button>
+    </gesture-element>
+
+    <div class="drawer__content flex flex-col h-full p-4">
+      <div id="chat-messages" class="flex flex-col gap-2 flex-grow overflow-auto mb-4"></div>
+      <form id="chat-form" class="flex border rounded-lg overflow-hidden">
+        <input id="user-input" type="text" placeholder="Kirjoita viesti..." class="flex-grow p-3 border-0 outline-none" />
+        <button type="submit" class="bg-blue-600 text-white px-4">📨</button>
+      </form>
+    </div>
+  </div>
+</search-drawer>
