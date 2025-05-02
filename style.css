@@ -1,59 +1,31 @@
 /* ===================================================================
-   Chat Drawer & Widget Styles
+   CHAT-WIDGET CSS (index.html + script.js)
    =================================================================== */
 
-/* -----------------------------
-   1) Piilota chat-drawer aluksi
-   ----------------------------- */
-#SearchDrawer[hidden] .drawer__inner {
-  transform: translateY(100%);
-  transition: transform 0.4s ease-in-out;
-}
-#SearchDrawer:not([hidden]) .drawer__inner {
-  transform: translateY(0);
-  transition: transform 0.4s ease-in-out;
-}
-
-/* ---------------------------------
-   2) Chat-drawer sisäosan ulkoasu
-   --------------------------------- */
-#SearchDrawer .drawer__inner {
-  position: fixed !important;
-  bottom: 20px !important;         /* 20px alareunasta */
-  right: 20px !important;          /* 20px oikeasta reunasta */
-  left: auto !important;           /* poista vasen nollaus */
-  width: 100% !important;
-  max-width: 320px !important;     /* maksimi leveydeksi 320px */
-  height: 400px !important;        /* kiinteä korkeus */
-  border-radius: 20px !important;  /* pehmeät kulmat */
-  background: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
-  overflow: hidden !important;
-  display: flex;
-  flex-direction: column;
-  z-index: 9999;
-}
-
-/* ---------------------------------
-   3) Poista taustalevyn väri
-   --------------------------------- */
-#SearchDrawer {
-  background: transparent !important;
-}
-
-/* ---------------------------------
-   4) Sisällön alue ja padding
-   --------------------------------- */
-#SearchDrawer .drawer__content {
-  flex: 1;
+/* -------------------------------------------------------------------
+   1) Pääkontaineri: piilota aluksi, position & animaatio
+   ------------------------------------------------------------------- */
+#chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: -100%;              /* piilossa oikealta */
+  width: 100%;
+  max-width: 320px;
+  height: 400px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: right 0.4s ease-in-out;
+  font-family: sans-serif;
+  z-index: 9999;
 }
 
-/* ---------------------------------
-   5) Chat-viestien scroll-alue
-   --------------------------------- */
+/* -------------------------------------------------------------------
+   2) Viestialue: scroll, padding, puhekuplat
+   ------------------------------------------------------------------- */
 #chat-messages {
   flex: 1;
   padding: 16px 12px;
@@ -63,18 +35,19 @@
   overflow-y: auto;
 }
 
-/* ---------------------------------
-   6) Pilleri-syöttölomake
-   --------------------------------- */
+/* -------------------------------------------------------------------
+   3) Lomake alaosassa: pilleri-syöttö + nappi
+   ------------------------------------------------------------------- */
 #chat-form {
   display: flex;
   align-items: center;
   padding: 12px;
-  background: #ffffff;
+  background: #fff;
   border-top: 1px solid #eee;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
 }
-#chat-form input#user-input {
+
+#chat-form #user-input {
   flex: 1;
   margin-right: 8px;
   padding: 14px 20px;
@@ -82,9 +55,10 @@
   border-radius: 9999px;
   background: #f2f2f2;
   font-size: 16px;
-  outline: none;
   color: #333;
+  outline: none;
 }
+
 #chat-form button {
   width: 52px;
   height: 52px;
@@ -97,13 +71,14 @@
   cursor: pointer;
   transition: background 0.2s ease;
 }
+
 #chat-form button:hover {
   background: #0056d2;
 }
 
-/* ---------------------------------
-   7) Viestien puhekuplat
-   --------------------------------- */
+/* -------------------------------------------------------------------
+   4) Puhekuplat: user & bot
+   ------------------------------------------------------------------- */
 .user-msg {
   align-self: flex-end;
   background: #007bff;
@@ -115,6 +90,7 @@
   line-height: 1.3;
   word-wrap: break-word;
 }
+
 .bot-msg {
   align-self: flex-start;
   background: #f1f1f1;
@@ -127,10 +103,9 @@
   word-wrap: break-word;
 }
 
-/* ---------------------------------
-   8) Avaa/chat-painike (headeriin tai bodyyn)
-   --------------------------------- */
-.open-chat-btn,
+/* -------------------------------------------------------------------
+   5) Avaa-chat -painike (💬) oikeassa alakulmassa
+   ------------------------------------------------------------------- */
 #open-chat {
   position: fixed;
   bottom: 20px;
@@ -150,26 +125,29 @@
   transition: background 0.2s ease;
   z-index: 10000;
 }
-.open-chat-btn:hover,
+
 #open-chat:hover {
   background: #0056d2;
 }
 
-/* ---------------------------------
-   9) Mobiili-optimoitu ulkoasu
-   --------------------------------- */
+/* -------------------------------------------------------------------
+   6) Mobiiliresponsiivisuus
+   ------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  #SearchDrawer .drawer__inner {
-    max-width: 100% !important;
-    height: calc(100vh - 40px) !important; /* jää 20px ylös ja alas */
-    bottom: 20px !important;
+  /* Widget täyttää koko leveyden, osittain korkeus */
+  #chat-widget {
     right: 0 !important;
-    border-radius: 16px 16px 0 0 !important;
+    max-width: 100%;
+    height: calc(100vh - 40px);
+    bottom: 20px;
+    border-radius: 16px;
   }
+
+  /* Sisäiset paddingit pienemmäksi */
   #chat-messages {
     padding: 12px 8px;
   }
-  #chat-form input#user-input {
+  #chat-form #user-input {
     font-size: 14px;
     padding: 12px 16px;
   }
@@ -177,7 +155,8 @@
     width: 48px;
     height: 48px;
   }
-  .open-chat-btn,
+
+  /* Avaa-painike pienemmäksi jos haluaa (voit jättää pois) */
   #open-chat {
     width: 48px;
     height: 48px;
@@ -186,4 +165,3 @@
     right: 16px;
   }
 }
-
