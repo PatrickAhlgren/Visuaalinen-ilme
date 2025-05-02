@@ -1,8 +1,8 @@
-/* Chat-widgetin pääkontaineri */
+/* Yleiset tyylit kaikille laitteille */
 #chat-widget {
-  width: 100%; /* Leveys täyttää mobiililaitteen näytön */
-  max-width: 320px;  /* Maksimileveys desktopilla */
-  height: auto;  /* Korkeus automaattisesti sisällön mukaan */
+  width: 100%;
+  max-width: 320px;
+  height: 400px;
   border: none;
   display: flex;
   flex-direction: column;
@@ -14,85 +14,37 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   overflow: hidden;
-  transition: right 0.5s ease-in-out;  /* Animaatio avautuessa */
-}
-
-/* Viestikenttä ja lähetä-painike mobiililaitteilla */
-#chat-form {
-  display: flex;
-  align-items: center;
-  padding: 12px;
-  background: #ffffff;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
-  border-top: 1px solid #eee;
-}
-
-#user-input {
-  flex: 1;
-  padding: 12px 18px;
-  font-size: 14px;
-  border-radius: 9999px; /* Pyöreät reunat */
-  background: #f5f5f5;
-  outline: none;
-  margin-right: 8px;
-}
-
-button {
-  border: none;
-  background: #007bff;
-  color: white;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;  /* Pyöreä painike */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  transition: background 0.2s ease;
-}
-
-button:hover {
-  background: #0056d2;  /* Tummempi sininen hover-tilassa */
-}
-
-/* Viestien ulkoasu */
-.user-msg {
-  align-self: flex-end;
-  background-color: #007bff;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 20px;
-  max-width: 80%;
-  font-size: 14px;
-}
-
-.bot-msg {
-  align-self: flex-start;
-  background-color: #f1f1f1;
-  color: #333;
-  padding: 10px 14px;
-  border-radius: 20px;
-  max-width: 80%;
-  font-size: 14px;
+  transition: right 0.5s ease-in-out; /* Animaatio avautuessa */
 }
 
 /* Mobiiliversio: Leveys alle 768px */
 @media (max-width: 768px) {
   #chat-widget {
     max-width: 280px;
-    right: 0;  /* Widget ilmestyy ruudulle oikealle */
+    right: 0; /* Widget ilmestyy oikealle */
+    height: auto;
   }
 
   #user-input {
-    font-size: 14px;
+    font-size: 14px; /* Pienempi fonttikoko mobiilissa */
     padding: 10px 12px;
   }
 
   button {
-    width: 40px;
+    width: 40px; /* Pienempi painike mobiililaitteelle */
     height: 40px;
   }
 }
 
+/* Desktop- ja tabletiversio: Näyttää normaalisti */
+@media (min-width: 768px) {
+  #chat-widget {
+    max-width: 320px;
+    right: 20px; /* Widget pysyy oikeassa alakulmassa */
+  }
+
+  #user-input {
+    font-size: 16px; /* Suurempi fonttikoko tietokoneilla */
+  }
+}
 
