@@ -2,7 +2,7 @@
   <div class="drawer__inner absolute top-0 flex flex-col w-full h-full overflow-hidden bg-white shadow-xl">
     <gesture-element class="drawer__header flex justify-between items-center p-4 border-b">
       <span class="drawer__title text-2xl font-semibold">Lähetä viesti</span>
-      <button class="text-xl" onclick="toggleChat()">×</button>
+      <button class="text-xl" onclick="document.getElementById('SearchDrawer').setAttribute('hidden', true)">×</button>
     </gesture-element>
 
     <div class="drawer__content flex flex-col h-full p-4">
@@ -14,4 +14,3 @@
     </div>
   </div>
 </search-drawer>
-
