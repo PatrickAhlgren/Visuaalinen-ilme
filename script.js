@@ -1,3 +1,17 @@
+// Hae elementit
+const chatWidget = document.getElementById("chat-widget");
+const openButton = document.getElementById("open-chat");
+
+// Avaa chat-widget
+openButton.addEventListener("click", function() {
+  if (chatWidget.style.left === "0px") {
+    chatWidget.style.left = "-320px";  // Sulkee chatin
+  } else {
+    chatWidget.style.left = "0px";  // Avaa chatin
+  }
+});
+
+// Lähetä viesti
 document.getElementById("chat-form").addEventListener("submit", async function(e) {
   e.preventDefault();
 
@@ -6,37 +20,15 @@ document.getElementById("chat-form").addEventListener("submit", async function(e
   if (!message) return;
 
   const chat = document.getElementById("chat-messages");
-
-  // Lisää käyttäjän viesti
-  const userBubble = document.createElement("div");
-  userBubble.className = "user-msg";
-  userBubble.textContent = message;
-  chat.appendChild(userBubble);
+  chat.innerHTML += `<div class="user-msg">${message}</div>`;
   input.value = "";
-  chat.scrollTop = chat.scrollHeight;
 
-  try {
-    const res = await fetch("https://bottipalvelin.onrender.com/kysy", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ viesti: message })
-    });
+  const res = await fetch("https://bottipalvelin.onrender.com/kysy", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ viesti: message })
+  });
 
-    const data = await res.json();
-
-    // Lisää botin vastaus
-    const botBubble = document.createElement("div");
-    botBubble.className = "bot-msg";
-    botBubble.textContent = data.vastaus;
-    chat.appendChild(botBubble);
-    chat.scrollTop = chat.scrollHeight;
-
-  } catch (err) {
-    // Näytä virheviesti
-    const errorBubble = document.createElement("div");
-    errorBubble.className = "bot-msg";
-    errorBubble.textContent = "Virhe palvelussa. Yritä myöhemmin.";
-    chat.appendChild(errorBubble);
-    chat.scrollTop = chat.scrollHeight;
-  }
+  const data = await res.json();
+  chat.innerHTML += `<div class="bot-msg">${data.vastaus}</div>`;
 });
