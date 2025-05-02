@@ -1,21 +1,18 @@
-/* ---------------------------------------
-   KOKO SIVUN FONTTI
----------------------------------------- */
-body, input, button, .chat-header {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
+/* ===================================================================
+   CHAT-WIDGET CSS
+   =================================================================== */
 
-/* -------------------------------------------------------------------
-   1) CHAT-WIDGET: position, koko, animaatio
--------------------------------------------------------------------- */
+/* -------------------------------------------------
+   1) Widgetin pääkontaineri
+--------------------------------------------------- */
 #chat-widget {
   position: fixed;
   bottom: 20px;
-  right: -100%;
+  right: -100%;              /* piilossa oikealta */
   width: 100%;
   max-width: 320px;
   height: 400px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: flex;
@@ -23,23 +20,27 @@ body, input, button, .chat-header {
   overflow: hidden;
   transition: right 0.4s ease-in-out;
   z-index: 9999;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* -------------------------------------------------------------------
-   2) CHAT-HEADER: yläreunassa, keskitetty, ohut viiva alla
--------------------------------------------------------------------- */
+/* -------------------------------------------------
+   2) Chat-otsikko (header) pilleri-outlinellä
+--------------------------------------------------- */
 .chat-header {
   text-align: center;
-  padding: 12px 0;
-  font-weight: 500;
+  padding: 8px 16px;            /* pilleri-muotoa varten */
+  margin: 0 auto;               /* keskitys */
   font-size: 16px;
-  border-bottom: 1px solid #eee;
+  font-weight: 300;             /* kevyt fontti */
+  color: #333;
+  border: 1px solid #eee;       /* ohut harmaa outline */
+  border-radius: 9999px;        /* pilleri-muoto */
   flex-shrink: 0;
 }
 
-/* -------------------------------------------------------------------
-   3) VIESTIALUE: scroll ja padding
--------------------------------------------------------------------- */
+/* -------------------------------------------------
+   3) Viestialue: scroll ja padding
+--------------------------------------------------- */
 #chat-messages {
   flex: 1;
   padding: 16px 12px;
@@ -49,14 +50,14 @@ body, input, button, .chat-header {
   overflow-y: auto;
 }
 
-/* -------------------------------------------------------------------
-   4) SYÖTTÖLOMAKE: pilleri ja nappi
--------------------------------------------------------------------- */
+/* -------------------------------------------------
+   4) Syöttölomake alaosassa: pilleri + nuoli
+--------------------------------------------------- */
 #chat-form {
   display: flex;
   align-items: center;
   padding: 12px;
-  background: #fff;
+  background: #ffffff;
   border-top: 1px solid #eee;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
   flex-shrink: 0;
@@ -90,9 +91,9 @@ body, input, button, .chat-header {
   background: #0056d2;
 }
 
-/* -------------------------------------------------------------------
-   5) PUHEKUPLAT: user & bot
--------------------------------------------------------------------- */
+/* -------------------------------------------------
+   5) Puhekuplat: käyttäjän ja botin viestit
+--------------------------------------------------- */
 .user-msg {
   align-self: flex-end;
   background: #007bff;
@@ -115,9 +116,9 @@ body, input, button, .chat-header {
   word-wrap: break-word;
 }
 
-/* -------------------------------------------------------------------
-   6) Avaa-chat-painike: oikeassa yläkulmassa
--------------------------------------------------------------------- */
+/* -------------------------------------------------
+   6) Avaa-chat -painike oikeassa yläkulmassa
+--------------------------------------------------- */
 #open-chat {
   position: fixed;
   top: 20px;
@@ -141,10 +142,11 @@ body, input, button, .chat-header {
   background: #0056d2;
 }
 
-/* -------------------------------------------------------------------
-   7) RESPONSIVE: MOBIILI-OPTIMOINTI
--------------------------------------------------------------------- */
+/* -------------------------------------------------
+   7) Responsiivinen mobiili-asettelu
+--------------------------------------------------- */
 @media (max-width: 768px) {
+  /* Widget kiinni reunassa, venyy leveään näyttöön */
   #chat-widget {
     right: 0 !important;
     max-width: 100%;
@@ -171,3 +173,4 @@ body, input, button, .chat-header {
     font-size: 24px;
   }
 }
+
