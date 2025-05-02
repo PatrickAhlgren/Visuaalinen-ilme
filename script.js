@@ -1,17 +1,10 @@
-// Hae elementit
-const chatWidget = document.getElementById("chat-widget");
-const openButton = document.getElementById("open-chat");
+// Toggle chat-widgetin näkyvyys
+function toggleChat() {
+  const widget = document.getElementById('chat-widget');
+  widget.style.right = widget.style.right === '0px' ? '-100%' : '0px'; // Vaihtaa sijaintia
+}
 
-// Avaa chat-widget
-openButton.addEventListener("click", function() {
-  if (chatWidget.style.right === "0px") {
-    chatWidget.style.right = "-320px";  // Sulkee chatin
-  } else {
-    chatWidget.style.right = "0px";  // Avaa chatin
-  }
-});
-
-// Lähetä viesti
+// Viestin lähettäminen
 document.getElementById("chat-form").addEventListener("submit", async function(e) {
   e.preventDefault();
 
@@ -32,3 +25,4 @@ document.getElementById("chat-form").addEventListener("submit", async function(e
   const data = await res.json();
   chat.innerHTML += `<div class="bot-msg">${data.vastaus}</div>`;
 });
+
