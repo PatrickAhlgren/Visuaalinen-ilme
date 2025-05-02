@@ -8,7 +8,7 @@
 #chat-widget {
   position: fixed;
   bottom: 20px;
-  right: -100%;              /* piilossa oikealta */
+  right: -100%;
   width: 100%;
   max-width: 320px;
   height: 400px;
@@ -19,7 +19,7 @@
   flex-direction: column;
   overflow: hidden;
   transition: right 0.4s ease-in-out;
-  font-family: sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   z-index: 9999;
 }
 
@@ -36,7 +36,19 @@
 }
 
 /* -------------------------------------------------------------------
-   3) Lomake alaosassa: pilleri-syöttö + nappi
+   3) Chat-header “Patrickin Botti”
+   ------------------------------------------------------------------- */
+.chat-header {
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* -------------------------------------------------------------------
+   4) Lomake alaosassa: pilleri-syöttö + nappi
    ------------------------------------------------------------------- */
 #chat-form {
   display: flex;
@@ -77,7 +89,7 @@
 }
 
 /* -------------------------------------------------------------------
-   4) Puhekuplat: user & bot
+   5) Puhekuplat: user & bot
    ------------------------------------------------------------------- */
 .user-msg {
   align-self: flex-end;
@@ -104,11 +116,11 @@
 }
 
 /* -------------------------------------------------------------------
-   5) Avaa-chat -painike (💬) oikeassa alakulmassa
+   6) Avaa-chat -painike (💬) yläkulmassa
    ------------------------------------------------------------------- */
 #open-chat {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
   width: 56px;
   height: 56px;
@@ -131,10 +143,10 @@
 }
 
 /* -------------------------------------------------------------------
-   6) Mobiiliresponsiivisuus
+   7) Mobiiliresponsiivisuus
    ------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  /* Widget täyttää koko leveyden, osittain korkeus */
+  /* Widget venyy koko leveyteen ja pysyy alhaalla */
   #chat-widget {
     right: 0 !important;
     max-width: 100%;
@@ -156,12 +168,12 @@
     height: 48px;
   }
 
-  /* Avaa-painike pienemmäksi jos haluaa (voit jättää pois) */
+  /* Avaa-painike hieman pienempänä yläkulmassa */
   #open-chat {
+    top: 16px;
+    right: 16px;
     width: 48px;
     height: 48px;
     font-size: 24px;
-    bottom: 16px;
-    right: 16px;
   }
 }
