@@ -1,4 +1,4 @@
-/* Chat-widgetin pääkontaineri (piilotetaan aluksi) */
+/* Chat-widgetin pääkontaineri (siirretään oikeaan reunaan) */
 #chat-widget {
   width: 320px;
   height: 400px;
@@ -8,12 +8,12 @@
   font-family: sans-serif;
   position: fixed;
   bottom: 20px;
-  left: -320px;  /* Piilotetaan vasemmalle */
+  right: 20px;  /* Oikea reuna */
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   overflow: hidden;
-  transition: left 0.5s ease-in-out;  /* Animaatio widgetin liikkumiseen */
+  transition: right 0.5s ease-in-out;  /* Animaatio widgetin liikkumiseen */
 }
 
 /* Viestialue */
@@ -110,3 +110,25 @@ button:hover {
 #open-chat:hover {
   background: #0056d2;
 }
+
+/* RESPONSIVE: Mobiilioptimointi */
+@media (max-width: 768px) {
+  #chat-widget {
+    width: 280px; /* Vähän kapeampi mobiilissa */
+    height: auto;
+  }
+
+  #chat-form {
+    padding: 8px;  /* Pienempi padding */
+  }
+
+  #user-input {
+    padding: 10px 12px;
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
