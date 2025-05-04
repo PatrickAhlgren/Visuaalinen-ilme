@@ -8,22 +8,23 @@
 </head>
 <body>
 
-  <!-- Avaus-painike headeriin (oikeassa yläkulmassa) -->
+  <!-- Avaus-painike -->
   <button id="open-chat" aria-label="Avaa chat">💬</button>
 
-  <!-- Chat-widget kokonaisuudessaan -->
+  <!-- Chat-widget -->
   <div id="chat-widget">
 
-    <!-- 1) Header-kontaineri: tausta + pilleri + divider -->
+    <!-- 1) Header -->
     <div class="chat-header-container">
-      <div class="chat-header">Tamaans answering ai</div>
-      <div class="chat-divider"></div>
+      <div class="chat-header">ASIAKAPALVELU</div>
+      <button id="close-chat" class="close-chat-btn" aria-label="Sulje ikkuna">✕</button>
     </div>
+    <div class="chat-divider"></div>
 
     <!-- 2) Viestialue -->
     <div id="chat-messages"></div>
 
-    <!-- 3) Syöttölomake alaosassa -->
+    <!-- 3) Lomake -->
     <form id="chat-form">
       <input
         type="text"
