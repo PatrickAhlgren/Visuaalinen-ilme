@@ -2,9 +2,7 @@
    CHAT-WIDGET CSS
    =================================================================== */
 
-/* -------------------------------------------------
-   1) Widgetin pääkontaineri
---------------------------------------------------- */
+/* 1) Widget-kontaineri */
 #chat-widget {
   position: fixed;
   bottom: 20px;
@@ -12,7 +10,7 @@
   width: 100%;
   max-width: 320px;
   height: 400px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: flex;
@@ -23,31 +21,25 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* -------------------------------------------------
-   2) Header-kontaineri: border-radius & overflow
---------------------------------------------------- */
+/* 2) Header-kontaineri – nyt VALKOINEN */
 .chat-header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0; /* padding hoidetaan sisäisillä elementeillä */
+  padding: 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background: #7B61FF; /* violetti */
+  background: #fff;       /* valkoinen */
   flex-shrink: 0;
 }
 
-/* -------------------------------------------------
-   3) Chat-otsikko: ASIAKAPALVELU
-      - inline-pillertyylinen
-      - valkoinen kursiivi
---------------------------------------------------- */
+/* 3) Pilleri-otsikko */
 .chat-header {
   display: inline-block;
   margin: 12px;
   padding: 6px 16px;
-  background: transparent;
-  color: #ffffff;
+  background: #7B61FF;    /* violetti pilleri */
+  color: #fff;
   font-size: 14px;
   font-style: italic;
   font-weight: 300;
@@ -55,25 +47,7 @@
   text-align: center;
 }
 
-/* -------------------------------------------------
-   4) Sulje-ikkuna -nappi
---------------------------------------------------- */
-.close-chat-btn {
-  margin: 12px;
-  padding: 4px;
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.8);
-  font-size: 18px;
-  cursor: pointer;
-}
-.close-chat-btn:hover {
-  color: #fff;
-}
-
-/* -------------------------------------------------
-   5) Ohut viiva headerin alla
---------------------------------------------------- */
+/* 4) Divider-viiva headerin alla */
 .chat-divider {
   width: 100%;
   height: 1px;
@@ -82,9 +56,7 @@
   flex-shrink: 0;
 }
 
-/* -------------------------------------------------
-   6) Viestialue
---------------------------------------------------- */
+/* 5) Viestialue */
 #chat-messages {
   flex: 1;
   padding: 0 12px 16px;
@@ -94,19 +66,16 @@
   overflow-y: auto;
 }
 
-/* -------------------------------------------------
-   7) Lomake alaosassa
---------------------------------------------------- */
+/* 6) Lähetä-lomake */
 #chat-form {
   display: flex;
   align-items: center;
   padding: 12px;
-  background: #ffffff;
+  background: #fff;
   border-top: 1px solid #eee;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
   flex-shrink: 0;
 }
-
 #chat-form #user-input {
   flex: 1;
   margin-right: 8px;
@@ -118,7 +87,6 @@
   color: #333;
   outline: none;
 }
-
 #chat-form button {
   width: 52px;
   height: 52px;
@@ -135,9 +103,7 @@
   background: #0056d2;
 }
 
-/* -------------------------------------------------
-   8) Puhekuplat
---------------------------------------------------- */
+/* 7) Puhekuplat */
 .user-msg {
   align-self: flex-end;
   background: #007bff;
@@ -148,7 +114,6 @@
   font-size: 14px;
   word-wrap: break-word;
 }
-
 .bot-msg {
   align-self: flex-start;
   background: #f1f1f1;
@@ -160,9 +125,7 @@
   word-wrap: break-word;
 }
 
-/* -------------------------------------------------
-   9) Avaa-chat -painike
---------------------------------------------------- */
+/* 8) Avaa-chat -painike */
 #open-chat {
   position: fixed;
   top: 20px;
@@ -186,9 +149,21 @@
   background: #0056d2;
 }
 
-/* -------------------------------------------------
-   10) Mobiilioptimoitu
---------------------------------------------------- */
+/* 9) Sulje-ikkuna -nappi */
+.close-chat-btn {
+  margin: 12px;
+  padding: 4px;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 18px;
+  cursor: pointer;
+}
+.close-chat-btn:hover {
+  color: #555;
+}
+
+/* 10) Mobiili */
 @media (max-width: 768px) {
   #chat-widget {
     right: 0 !important;
