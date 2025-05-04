@@ -28,28 +28,11 @@
       ja vain niin korkea kuin header+divider
 --------------------------------------------------- */
 .chat-header-container {
-  background: #7B61FF;    /* violetti */
+  background: #ffffff;    /* valkoinen */
   display: flex;
   flex-direction: column;
   flex-shrink: 0;         /* ei veny */
   flex-grow: 0;           /* ei veny */
-}
-
-/* -------------------------------------------------
-   3) Chat-otsikko pilleri-muodossa: valkoinen
-      ja kursivoitu, keskitetty
---------------------------------------------------- */
-.chat-header {
-  margin: 0 auto;         /* keskitys */
-  padding: 12px 16px;     /* pilleri-ilme */
-  background: #ffffff;    /* pilleri-valkoinen */
-  color: #555;            /* teksti tummanharmaa */
-  font-size: 16px;
-  font-style: italic;     /* kursivoitu */
-  font-weight: 300;       /* kevyt */
-  border-radius: 9999px;
-  text-align: center;
-  display: inline-block;
 }
 
 /* -------------------------------------------------
