@@ -8,30 +8,25 @@
 </head>
 <body>
 
-  <!-- Avaus-painike -->
+  <!-- Avaa-chat -nappi -->
   <button id="open-chat" aria-label="Avaa chat">💬</button>
 
-  <!-- Chat-widget -->
+  <!-- Koko chat-widget -->
   <div id="chat-widget">
 
-    <!-- 1) Header -->
+    <!-- Header -->
     <div class="chat-header-container">
       <div class="chat-header">ASIAKAPALVELU</div>
       <button id="close-chat" class="close-chat-btn" aria-label="Sulje ikkuna">✕</button>
     </div>
     <div class="chat-divider"></div>
 
-    <!-- 2) Viestialue -->
+    <!-- Viestialue -->
     <div id="chat-messages"></div>
 
-    <!-- 3) Lomake -->
+    <!-- Lähetä-lomake -->
     <form id="chat-form">
-      <input
-        type="text"
-        id="user-input"
-        placeholder="Lähetä viesti..."
-        autocomplete="off"
-      />
+      <input id="user-input" type="text" placeholder="Lähetä viesti…" autocomplete="off">
       <button type="submit" aria-label="Lähetä viesti">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
           <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/>
