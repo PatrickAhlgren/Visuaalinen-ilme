@@ -2,7 +2,7 @@
    CHAT-WIDGET CSS
    =================================================================== */
 
-/* 1) Widget-kontaineri */
+/* 1) Widgetin pääkontaineri */
 #chat-widget {
   position: fixed;
   bottom: 20px;
@@ -10,7 +10,7 @@
   width: 100%;
   max-width: 320px;
   height: 400px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: flex;
@@ -21,36 +21,34 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* 2) Header-kontaineri – nyt VALKOINEN */
+/* 2) Header-kontaineri – valkoinen tausta */
 .chat-header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background: #fff;       /* valkoinen */
+  background: #ffffff;
   flex-shrink: 0;
+  padding: 0;
 }
 
-/* 3) Pilleri-otsikko */
+/* 3) Chat-otsikko – tumma teksti, keskitetty */
 .chat-header {
-  display: inline-block;
-  margin: 12px;
-  padding: 6px 16px;
-  background: #7B61FF;    /* violetti pilleri */
-  color: #fff;
-  font-size: 14px;
-  font-style: italic;
-  font-weight: 300;
-  border-radius: 9999px;
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 0 16px;
   text-align: center;
+  color: #333;
+  font-size: 16px;
+  font-weight: 300;
 }
 
-/* 4) Divider-viiva headerin alla */
+/* 4) Divider-viiva otsikon alla – superohut */
 .chat-divider {
   width: 100%;
-  height: 1px;
+  height: 0.5px;
   background: #ccc;
   margin: 0;
   flex-shrink: 0;
@@ -66,12 +64,12 @@
   overflow-y: auto;
 }
 
-/* 6) Lähetä-lomake */
+/* 6) Syöttölomake */
 #chat-form {
   display: flex;
   align-items: center;
   padding: 12px;
-  background: #fff;
+  background: #ffffff;
   border-top: 1px solid #eee;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
   flex-shrink: 0;
@@ -103,7 +101,7 @@
   background: #0056d2;
 }
 
-/* 7) Puhekuplat */
+/* 7) Viestikuplat */
 .user-msg {
   align-self: flex-end;
   background: #007bff;
@@ -163,7 +161,7 @@
   color: #555;
 }
 
-/* 10) Mobiili */
+/* 10) Mobiilioptimointi */
 @media (max-width: 768px) {
   #chat-widget {
     right: 0 !important;
