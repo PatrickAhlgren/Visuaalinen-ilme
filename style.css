@@ -2,7 +2,7 @@
    CHAT-WIDGET CSS
    =================================================================== */
 
-/* 1) Widgetin pääkontaineri */
+/* 1) Pääkontaineri */
 #chat-widget {
   position: fixed;
   bottom: 20px;
@@ -21,35 +21,34 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* 2) Header-kontaineri – valkoinen tausta */
+/* 2) Header-kontaineri – pelkkä tekstialue */
 .chat-header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   background: #ffffff;
+  padding: 8px 0;
   flex-shrink: 0;
-  padding: 0;
 }
 
-/* 3) Chat-otsikko – tumma teksti, keskitetty */
+/* 3) Header-teksti – minimalistinen, ohut ja selkeä */
 .chat-header {
-  display: block;
-  width: 100%;
-  margin: 12px 0;
+  margin: 0;
   padding: 0 16px;
-  text-align: center;
-  color: #333;
-  font-size: 16px;
-  font-weight: 300;
+  color: #444;              /* hillitty tummanharmaa */
+  font-size: 14px;          /* hieman pienempi */
+  font-weight: 300;         /* kevyt */
+  letter-spacing: 0.5px;    /* väljempää kirjainta */
+  text-transform: uppercase;
 }
 
-/* 4) Divider-viiva otsikon alla – superohut */
+/* 4) Ohut divider-viiva */
 .chat-divider {
   width: 100%;
   height: 0.5px;
-  background: #ccc;
+  background: #e0e0e0;
   margin: 0;
   flex-shrink: 0;
 }
@@ -74,6 +73,7 @@
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
   flex-shrink: 0;
 }
+
 #chat-form #user-input {
   flex: 1;
   margin-right: 8px;
@@ -85,6 +85,7 @@
   color: #333;
   outline: none;
 }
+
 #chat-form button {
   width: 52px;
   height: 52px;
@@ -101,7 +102,7 @@
   background: #0056d2;
 }
 
-/* 7) Viestikuplat */
+/* 7) Puhekuplat */
 .user-msg {
   align-self: flex-end;
   background: #007bff;
@@ -112,6 +113,7 @@
   font-size: 14px;
   word-wrap: break-word;
 }
+
 .bot-msg {
   align-self: flex-start;
   background: #f1f1f1;
@@ -149,8 +151,7 @@
 
 /* 9) Sulje-ikkuna -nappi */
 .close-chat-btn {
-  margin: 12px;
-  padding: 4px;
+  margin-right: 16px;
   background: none;
   border: none;
   color: #888;
