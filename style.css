@@ -36,7 +36,7 @@
 /* 3) Header-teksti – minimalistinen, ohut ja selkeä */
 .chat-header {
   margin: 0;
-  padding: 0 100px;
+  padding: 0 16px;
   color: #444;              /* hillitty tummanharmaa */
   font-size: 14px;          /* hieman pienempi */
   font-weight: 300;         /* kevyt */
@@ -151,7 +151,7 @@
 
 /* 9) Sulje-ikkuna -nappi */
 .close-chat-btn {
-  margin-right: 90px;
+  margin-right: 900px;
   background: none;
   border: none;
   color: #888;
